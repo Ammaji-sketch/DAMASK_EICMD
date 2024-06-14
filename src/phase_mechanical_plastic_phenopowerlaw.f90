@@ -578,6 +578,7 @@ module subroutine plastic_kinematic_deltaFp(ph,en,twinJump,deltaFp)
           Success_Nucleation: if (random <= stt%f_twin(twin_var,en)) then          
             twinJump = .true.
             deltaFp  = prm%CorrespondenceMatrix(:,:,twin_var)
+            write(6,*)'element', en                                   !Ammaji
             exit
           endif Success_Nucleation
         endif Ability_Nucleation
